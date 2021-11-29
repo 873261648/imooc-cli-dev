@@ -45,7 +45,7 @@ cli.usage('Usage:imooc-cli [command] <options>')  // 使用说明
     })
     .group(['debug'],'Dev Options:')
     .command('init [name]','初始化项目',(yargs)=>{
-        // 命令执行前执行的一些操作
+        // 命令执行前执行的一些操作 一般用于定义额外的options
         yargs.option('name',{
             type:String,
             require:true
@@ -53,5 +53,11 @@ cli.usage('Usage:imooc-cli [command] <options>')  // 使用说明
     },argv=>{
         // 命令的处理方法
         console.log(argv)
+    })
+    .commend({  // 对象形式定义命令
+        command:'',  // 命令
+        aliases:[],  // 别名
+        builder:yargs=>{},
+        handler:argv=>{}
     })
     .parse(argv,{...context,a:'注入自定义参数'});
