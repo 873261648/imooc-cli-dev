@@ -1,7 +1,5 @@
 'use strict';
 
-module.exports = units;
-
-function units() {
-    // TODO
-}
+module.exports = {
+    sub:(a,b)=>a+b
+};

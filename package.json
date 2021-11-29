@@ -5,6 +5,9 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "bin": {
+        "imooc-cli": "packages/core/lib/index.js"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
@@ -13,5 +16,9 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "dedent": "^0.7.0",
+        "yargs": "^17.2.1"
     }
 }
