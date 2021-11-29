@@ -1,6 +1,6 @@
 {
   "name": "@gych-imooc-cli-dev/units",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "> TODO: description",
   "author": "guoyuchen <guoyuchen@imooc.com>",
   "homepage": "",
@@ -18,7 +18,5 @@
   },
   "scripts": {
     "test": "echo \"@gych-imooc-cli-dev/units test\""
-  },
-  "dependencies": {
   }
 }
