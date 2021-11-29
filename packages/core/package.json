@@ -1,6 +1,6 @@
 {
   "name": "@gych-imooc-cli-dev/core",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "imooc-cli core",
   "author": "guoyuchen <guoyuchen@imooc.com>",
   "homepage": "",
@@ -20,6 +20,6 @@
     "test": "echo \"@gych-imooc-cli-dev/core test\""
   },
   "dependencies": {
-    "@gych-imooc-cli-dev/units": "^1.0.1"
+    "@gych-imooc-cli-dev/units": "^1.0.2"
   }
 }
