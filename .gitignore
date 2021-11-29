@@ -5,6 +5,7 @@ node_modules
 packages/**/node_modules
 commands/**/node_modules
 models/**/node_modules
+packages/**/package-lock.json
 lerna-debug.log
 package-lock.json
 
