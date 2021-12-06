@@ -6,7 +6,6 @@ packages/**/node_modules
 commands/**/node_modules
 models/**/node_modules
 lerna-debug.log
-package-lock.json
 
 .DS_Store
 **/.DS_Store
