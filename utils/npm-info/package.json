@@ -1,6 +1,6 @@
 {
   "name": "@gych-imooc-cli-dev/npm-info",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "获取npm包信息",
   "author": "guoyuchen <guoyuchen@imooc.com>",
   "homepage": "https://github.com/873261648/imooc-cli-dev#readme",
@@ -30,5 +30,6 @@
     "axios": "^0.24.0",
     "semver": "^7.3.5",
     "url-join": "^4.0.1"
-  }
+  },
+  "gitHead": "9926b93ee2346a6d3a642113582023a82ae5d63e"
 }

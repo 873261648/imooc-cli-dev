@@ -1,6 +1,6 @@
 {
   "name": "@gych-imooc-cli-dev/log",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "> TODO: description",
   "author": "guoyuchen <guoyuchen@imooc.com>",
   "homepage": "https://github.com/873261648/imooc-cli-dev#readme",
@@ -28,5 +28,6 @@
   },
   "devDependencies": {
     "npmlog": "^6.0.0"
-  }
+  },
+  "gitHead": "9926b93ee2346a6d3a642113582023a82ae5d63e"
 }

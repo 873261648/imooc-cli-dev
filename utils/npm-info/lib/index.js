@@ -8,7 +8,7 @@ const getNpmInfo = (npmName, registry) => {
     registry = registry || getDefaultRegistry();
     let url = urlJoin(registry, npmName)
     axios.get(url).then(res => {
-        console.log(res);
+        // console.log(res);
     })
 
 
