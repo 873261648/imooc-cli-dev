@@ -1,6 +1,6 @@
 {
 	"name": "@gych-imooc-cli-dev/core",
-	"version": "1.0.7",
+	"version": "1.0.4",
 	"description": "imooc-cli core",
 	"author": "guoyuchen <guoyuchen@imooc.com>",
 	"homepage": "",
@@ -17,8 +17,8 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@gych-imooc-cli-dev/log": "^1.0.5",
-		"@gych-imooc-cli-dev/npm-info": "^1.0.5",
+		"@gych-imooc-cli-dev/log": "file:../../utils/log",
+		"@gych-imooc-cli-dev/npm-info": "file:../../utils/npm-info",
 		"@gych-imooc-cli-dev/units": "file:../../utils/utils",
 		"colors": "^1.4.0",
 		"dotenv": "^10.0.0",
@@ -28,5 +28,5 @@
 		"root-check": "^2.0.0",
 		"semver": "^7.3.5"
 	},
-	"gitHead": "8fcc31bc9cc4230f793a26baa58fbdbb6acc6331"
+	"gitHead": "fcf10c9f550d03d0999617a52195f6962af485e4"
 }
