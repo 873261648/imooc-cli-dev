@@ -1,0 +1,35 @@
+{
+    "name": "@gych-imooc-cli-dev/package",
+    "version": "1.0.9",
+    "description": "> TODO: description",
+    "author": "guoyuchen <guoyuchen@imooc.com>",
+    "homepage": "https://github.com/873261648/imooc-cli-dev#readme",
+    "license": "ISC",
+    "main": "lib/index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/873261648/imooc-cli-dev.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1"
+    },
+    "bugs": {
+        "url": "https://github.com/873261648/imooc-cli-dev/issues"
+    },
+    "dependencies": {
+        "@gych-imooc-cli-dev/units": "file:../../utils/utils",
+        "@gych-imooc-cli-dev/npm-info": "file:../../utils/npm-info",
+        "npminstall": "^5.3.1",
+        "pkg-dir": "^5.0.0"
+    }
+}

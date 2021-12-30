@@ -17,14 +17,15 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@gych-imooc-cli-dev/log": "^file:../../utils/log",
-		"@gych-imooc-cli-dev/npm-info": "^file:../../utils/npm-info",
-		"@gych-imooc-cli-dev/units": "file:../../utils/utils",
+		"@gych-imooc-cli-dev/log": "file:../../utils/log",
+		"@gych-imooc-cli-dev/npm-info": "file:../../utils/npm-info",
+		"@gych-imooc-cli-dev/utils": "file:../../utils/utils",
+		"@gych-imooc-cli-dev/init": "file:../../commands/init",
+		"@gych-imooc-cli-dev/exec": "file:../exec",
 		"colors": "^1.4.0",
 		"commander": "^8.3.0",
 		"dotenv": "^10.0.0",
 		"import-local": "^3.0.3",
-		"minimist": "^1.2.5",
 		"path-exists": "^5.0.0",
 		"root-check": "^2.0.0",
 		"semver": "^7.3.5"

@@ -1,5 +1,4 @@
 // 使用yogs实现脚手架基基本逻辑
-
 const semver = require('semver');  // 对比版本号
 const colors = require("colors");  // 对输入的log染色
 // const rootCheck = require('root-check');  // root降级，使用普通用户启动脚手架
@@ -8,7 +7,7 @@ const minimist = require("minimist"); // 解析参数
 const dotenv = require('dotenv');
 const os = require('os');
 const path = require("path");
-const {sub} = require('@gych-imooc-cli-dev/units');
+const {sub} = require('@gych-imooc-cli-dev/utils');
 const log = require('@gych-imooc-cli-dev/log');
 const {getNpmInfo, getNpmVersions, getSemverNpmVersions} = require('@gych-imooc-cli-dev/npm-info');
 const pkg = require('../../../package.json');
