@@ -32,6 +32,13 @@ const getSemverNpmVersions = async (npmName, current, registry) => {
         .filter(item => gt(item, current))
         .sort((a, b) => gt(a, b) ? -1 : 1)
 }
+const getLatestNpmVersions = async (npmName) => {
+    const versions = (await getNpmVersions(npmName)).sort((a, b) => gt(a, b) ? -1 : 1);
+    if (versions) {
+        return versions[0];
+    }
+    return null
+}
 
 // 使用原始源或淘宝源
 const getDefaultRegistry = (isOriginal) => {
@@ -42,5 +49,6 @@ module.exports = {
     getNpmInfo,
     getNpmVersions,
     getSemverNpmVersions,
-    getDefaultRegistry
+    getDefaultRegistry,
+    getLatestNpmVersions
 };

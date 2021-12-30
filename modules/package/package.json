@@ -30,6 +30,7 @@
         "@gych-imooc-cli-dev/npm-info": "file:../../utils/npm-info",
         "@gych-imooc-cli-dev/units": "file:../../utils/utils",
         "npminstall": "^5.3.1",
-        "pkg-dir": "^5.0.0"
+        "pkg-dir": "^5.0.0",
+        "semver": "^7.3.5"
     }
 }

@@ -8,9 +8,8 @@ const SETTING = {
 
 const index = async (...args) => {
     const cmd = args[args.length - 1]
-    let homePath = process.env.CLI_HOME_PATH;
     let targetPath = process.env.CLI_TARGET_PATH;
-    let pkg = null;
+    let pkg;
     if (!targetPath) {
         targetPath = path.resolve(os.homedir(), '.imooc-cli-dev', 'dependencies')
         pkg = new Package({
@@ -19,8 +18,8 @@ const index = async (...args) => {
             packageName: SETTING[cmd.name()],
             version: 'latest'
         });
-        if (pkg.exists()) {
-            pkg.update()
+        if (await pkg.exists()) {
+            await pkg.update()
         } else {
             await pkg.install()
         }
@@ -31,7 +30,9 @@ const index = async (...args) => {
             version: 'latest'
         });
     }
-    console.log(pkg.getRootFilePath());
+    const rootFile = pkg.getRootFilePath();
+    console.log(rootFile)
+    // require(rootFile)(...args);
 }
 
 module.exports = index;
