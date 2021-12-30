@@ -1,6 +1,6 @@
 {
   "name": "@gych-imooc-cli-dev/npm-info",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "获取npm包信息",
   "author": "guoyuchen <guoyuchen@imooc.com>",
   "homepage": "",

@@ -1,6 +1,6 @@
 {
     "name": "@gych-imooc-cli-dev/package",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "> TODO: description",
     "author": "guoyuchen <guoyuchen@imooc.com>",
     "homepage": "https://github.com/873261648/imooc-cli-dev#readme",
@@ -27,8 +27,8 @@
         "url": "https://github.com/873261648/imooc-cli-dev/issues"
     },
     "dependencies": {
-        "@gych-imooc-cli-dev/units": "file:../../utils/utils",
         "@gych-imooc-cli-dev/npm-info": "file:../../utils/npm-info",
+        "@gych-imooc-cli-dev/units": "file:../../utils/utils",
         "npminstall": "^5.3.1",
         "pkg-dir": "^5.0.0"
     }
