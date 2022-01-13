@@ -5,7 +5,7 @@ const {existsSync} = require('fs')
 const pkgDir = require('pkg-dir');
 const npmInstall = require('npminstall');
 const {gt} = require("semver");
-const {isObject} = require("@gych-imooc-cli-dev/units");
+const {isObject,formatPath} = require("@gych-imooc-cli-dev/units");
 const {getLatestNpmVersions, getDefaultRegistry} = require("@gych-imooc-cli-dev/npm-info");
 
 class Package {
@@ -73,10 +73,9 @@ class Package {
 
     getRootFilePath() {
         const _getRootPath = function (targetPath) {
-            const pkgPath = pkgDir.sync(targetPath);
-            console.log(existsSync(targetPath))
-            console.log(pkgPath)
-            let pkg = require(path.resolve(pkgPath, 'package.json')) || {};
+            // const pkgPath = pkgDir.sync(targetPath);
+            const pkgPath = pkgDir.sync(path.resolve(targetPath,'init'));
+            let pkg = require(path.resolve(pkgPath,'package.json')) || {};
             if (pkg.main) {
                 return path.resolve(pkgPath, pkg.main);
             }
@@ -87,9 +86,9 @@ class Package {
         }
 
         if (this.storePath) {
-            return _getRootPath(this.getCacheFilePath())
+            return formatPath(_getRootPath(this.getCacheFilePath()))
         } else {
-            return _getRootPath(this.targetPath)
+            return formatPath(_getRootPath(this.targetPath))
         }
     }
 }

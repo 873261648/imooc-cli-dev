@@ -13,7 +13,6 @@ const {getSemverNpmVersions} = require('@gych-imooc-cli-dev/npm-info');
 const init = require('@gych-imooc-cli-dev/init');
 const exec = require('@gych-imooc-cli-dev/exec/lib');
 const pkg = require('../../../package.json');
-const {NODE_LOW_VERSION} = require('./const');
 
 const core = function () {
     try {
@@ -25,13 +24,6 @@ const core = function () {
 }
 const checkVersion = function () {
     log.info(pkg.version)
-}
-
-const checkLowNodeVersion = function () {
-    let current = process.version;
-    if (!semver.gte(current, NODE_LOW_VERSION)) {
-        throw new Error(colors.red(`不符合最低Node版本要求，要求最低${NODE_LOW_VERSION}`))
-    }
 }
 
 const checkUserHome = () => {
@@ -68,7 +60,6 @@ const program = new commander.Command();
 
 const prepare = async ()=>{
     checkVersion();
-    checkLowNodeVersion();
     checkUserHome();
     // rootCheck();
     checkEnv();

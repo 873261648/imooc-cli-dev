@@ -25,5 +25,11 @@
   },
   "bugs": {
     "url": "https://github.com/873261648/imooc-cli-dev/issues"
+  },
+  "dependencies": {
+    "@gych-imooc-cli-dev/command": "file:../../modules/command",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.2.0",
+    "semver": "^7.3.5"
   }
 }
