@@ -1,9 +1,14 @@
 'use strict';
 const {readdirSync} = require('fs');
 const {emptyDir} = require("fs-extra");
+const {homedir} = require('os');
+const path = require("path");
 const inquirer = require('inquirer');
 const semver = require('semver');
 const command = require('@gych-imooc-cli-dev/command');
+const log = require('@gych-imooc-cli-dev/log');
+const request = require('@gych-imooc-cli-dev/request');
+const Package = require('@gych-imooc-cli-dev/package');
 
 const TYPE_PROJECT = 'project';
 const TYPE_COMPONENT = 'component';
@@ -20,11 +25,20 @@ class InitCommand extends command {
     }
 
     async exec() {
+        // 0.获取模板基本信息
+        this.projerctTemplate = await this.getTemplateList();
+        if (!this.projerctTemplate || !this.projerctTemplate.length) {
+            throw new Error('无可用项目模板');
+        }
         // 1.准备阶段
         const info = await this.prepare();
-        console.log(info)
         // 2.下载模板
+        await this.downTemplate(info);
         // 3.安装模板
+    }
+
+    async getTemplateList() {
+        return request('/project/template')
     }
 
     async prepare() {
@@ -117,20 +131,40 @@ class InitCommand extends command {
                         done(null, true);
                     }, 0);
                 },
-                filter:function (val) {
+                filter: function (val) {
                     if (!!semver.valid(val)) {
                         return semver.valid(val);
                     } else {
                         return val;
                     }
                 }
+            }, {
+                type: 'list',
+                name: 'template',
+                message: '请选择项目模板',
+                default: 0,
+                choices: this.projerctTemplate.map(item => new Object({name: item.projectName, value: item.npmName}))
             }])
         }
         return {
             ...option,
-            type:TYPE_PROJECT
+            type: TYPE_PROJECT
         }
-        // 4.获取模板基本信息
+    }
+
+    async downTemplate(info) {
+        const targetPath = path.resolve(homedir(), '.imooc-cli-dev', 'template');
+        const storePath = path.resolve(homedir(), '.imooc-cli-dev', 'template', 'node_modules');
+        const {npmName, version} = this.projerctTemplate.find(item=>item.npmName === info.template)
+        const pkg = new Package({
+            packageName:npmName,
+            version,
+            targetPath,
+            storePath
+        })
+        if(!await pkg.exists()){
+            await pkg.install();
+        }
     }
 }
 
