@@ -24,7 +24,7 @@ class Package {
 
     getCacheFilePath(version = this.version ) {
         // _@gych-imooc-cli-dev_init@1.0.10@@gych-imooc-cli-dev
-        return path.resolve(this.storePath, `_${this.packageName.replaceAll('/', '_')}@${version}@${this.packageName.slice(0, this.packageName.indexOf('/'))}`)
+        return path.resolve(this.storePath, `_${this.packageName.replaceAll('/', '_')}@${version}@${this.packageName}`)
     }
 
     async prepare() {

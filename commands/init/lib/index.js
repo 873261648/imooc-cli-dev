@@ -9,6 +9,7 @@ const command = require('@gych-imooc-cli-dev/command');
 const log = require('@gych-imooc-cli-dev/log');
 const request = require('@gych-imooc-cli-dev/request');
 const Package = require('@gych-imooc-cli-dev/package');
+const {spinnerStart} = require("@gych-imooc-cli-dev/utils");
 
 const TYPE_PROJECT = 'project';
 const TYPE_COMPONENT = 'component';
@@ -163,7 +164,13 @@ class InitCommand extends command {
             storePath
         })
         if(!await pkg.exists()){
+            const spinner = spinnerStart('模板下载中...')
             await pkg.install();
+            spinner.stop(true);
+            await new Promise(resolve => setTimeout(resolve,5000))
+            log.notice('下载成功！')
+        }else{
+            await pkg.update();
         }
     }
 }

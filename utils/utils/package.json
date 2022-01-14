@@ -19,5 +19,9 @@
   "scripts": {
     "test": "echo \"@gych-imooc-cli-dev/utils test\""
   },
-  "gitHead": "68d50d266b1fe363685ccfe0874a28421b0c6fbf"
+  "gitHead": "68d50d266b1fe363685ccfe0874a28421b0c6fbf",
+  "dependencies": {
+    "cli-spinners": "^2.6.1",
+    "cli-spinner": "^0.2.10"
+  }
 }

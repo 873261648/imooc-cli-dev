@@ -30,6 +30,7 @@
     "@gych-imooc-cli-dev/command": "file:../../modules/command",
     "@gych-imooc-cli-dev/package": "file:../../modules/package",
     "@gych-imooc-cli-dev/request": "file:../../utils/request",
+    "@gych-imooc-cli-dev/utils": "file:../../utils/utils",
     "@gych-imooc-cli-dev/log": "file:../../utils/log",
     "fs-extra": "^10.0.0",
     "inquirer": "^8.2.0",
