@@ -58,7 +58,6 @@ class Package {
         let latestVersion = await getLatestNpmVersions(this.packageName);
         let newCacheFilePath = this.getCacheFilePath(latestVersion);
         if (!existsSync(newCacheFilePath)) {
-            this.version = latestVersion;
             await npmInstall({
                 root: this.targetPath,
                 storeDir: this.storePath,
@@ -69,6 +68,7 @@ class Package {
                 registry: getDefaultRegistry(true)
             })
         }
+        this.version = latestVersion;
     }
 
     getRootFilePath() {
